@@ -1,0 +1,25 @@
+services:
+  nginx:
+    image: ilia1234559/nginx:user
+    restart: always
+    depends_on:
+      - apache
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - mynet
+
+  apache:
+    image: ilia1234559/apache2-server:latest
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
+
+
