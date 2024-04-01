@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: ilia1234559/nginx:user
+    image: ilia1234559/nginx:task18
     restart: always
     depends_on:
       - apache
@@ -11,7 +11,7 @@ services:
       - mynet
 
   apache:
-    image: ilia1234559/apache2-server:latest
+    image: ilia1234559/apache2-server:task18
     restart: always
     ports:
       - 8080:8080
